@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="2dp"
+    android:layout_marginEnd="3dp"
+    android:layout_marginBottom="5dp"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <RelativeLayout
+        android:id="@+id/imgRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageOffer"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <TextView
+            android:id="@+id/labelOfferReduction"
+            android:layout_width="45dp"
+            android:layout_height="25dp"
+            android:layout_alignTop="@id/imageOffer"
+            android:background="@color/colorPrimary"
+            android:fontFamily="@font/lato_bold"
+            android:gravity="center"
+            android:text="TextView"
+            android:textColor="@color/colorReduction"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imgPastille"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@id/imageOffer"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="3dp"
+            app:srcCompat="@drawable/offreoffer" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/labelOfferTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/lato_bold"
+        android:maxLines="1"
+        android:text="TextView"
+        android:textColor="@color/colorText"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:id="@+id/textRow1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imgTag"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            app:srcCompat="@drawable/offretag" />
+
+        <TextView
+            android:id="@+id/labelShopLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:fontFamily="@font/lato_regular"
+            android:maxLines="1"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:text="label marque"
+            android:textColor="#726B6A"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/textRow3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imgview"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            app:srcCompat="@drawable/offredetailposition" />
+
+        <TextView
+            android:id="@+id/labelShopAdress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/lato_regular"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:text="Adresse"
+            android:textColor="#726B6A"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/textRow2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/labelOfferPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/lato_regular"
+            android:text="prix normale"
+            android:textColor="#726B6A"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/labelOfferNetPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/lato_regular"
+            android:text="prix réduit"
+            android:textColor="@color/colorReduction"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/dividerOffreview"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#666666" />
+
+</LinearLayout>
+

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- couleur theme application shookisha  -->
+    <!--<color name="colorPrimary">#DEDEDE</color>-->
+    <color name="colorPrimary">#DEDEDE</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#009600</color>
+    <color name="textColorPrimary">#000000</color>
+    <color name="textColor">#999999</color>
+    <color name="windowBackground">#ffffff</color>
+    <color name="navigationBarColor">#000000</color>
+    <!-- couleur -->
+    <color name="vertShookisha">#009632</color>
+    <color name="newCompte">#A9783E</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorDanger">#f71d1d</color>
+    <color name="colorText">#333333</color>
+    <color name="colorReduction">#DB3E57</color>
+    <color name="infoBulle">#488961</color>
+    <color name="success">#28a745</color>
+    <color name="info">#17a2b8</color>
+    <color name="warning">#ffc107</color>
+    <color name="danger">#DC3545</color>
+
+    <!-- couleur jauge km -->
+    <color name="colorJauge1">#ff3300</color>
+    <color name="colorJauge2">#ff9900</color>
+    <color name="colorJauge3">#FFCC00</color>
+    <color name="colorJauge4">#8ce24f</color>
+    <color name="colorJauge5">#339966</color>
+    <color name="colorThumb">#ffffff</color>
+</resources>

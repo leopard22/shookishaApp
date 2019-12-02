@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbarPreference"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/btnBackOffreDetail"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:background="#00FFFFFF"
+                android:scaleType="center"
+                app:srcCompat="@drawable/arrow_back" />
+
+            <TextView
+                android:id="@+id/titleoffredetail"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_toStartOf="@+id/btnGoPreference"
+                android:layout_toEndOf="@id/btnBackOffreDetail"
+                android:fontFamily="@font/lato_bold"
+                android:gravity="center"
+                android:text="@string/title_offre_detail"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <ImageButton
+                android:id="@+id/btnGoPreference"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:background="#00FFFFFF"
+                android:scaleType="center" />
+        </RelativeLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/rowCoupon1"
+        android:layout_width="match_parent"
+        android:layout_height="221dp"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/imageProduit"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_weight="1"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingStart="15dp">
+
+            <TextView
+                android:id="@+id/labelTitleCoupon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_regular"
+                android:text="labelTitleCoupon"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/offretag" />
+
+                <TextView
+                    android:id="@+id/shopLabelCoupon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="shopLabelCoupon"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/offredetailposition" />
+
+                <TextView
+                    android:id="@+id/labelLieuxCoupon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="labelLieuxCoupon"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/labelReductionCoupon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/labelPriceCoupon"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="labelReductionCoupon"
+                    android:textColor="@color/colorReduction"
+                    android:textSize="19sp" />
+
+                <TextView
+                    android:id="@+id/labelPriceCoupon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="labelPriceCoupon"
+                    android:textSize="19sp" />
+
+                <TextView
+                    android:id="@+id/labelNetCoupon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toEndOf="@id/labelPriceCoupon"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="labelNetCoupon"
+                    android:textColor="@color/colorReduction"
+                    android:textSize="19sp" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/dividercouponview"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#666666" />
+
+    <TextView
+        android:id="@+id/textcodebarre1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato_bold"
+        android:gravity="center"
+        android:text="@string/text_code_barre_1"
+        android:textColor="@color/vertShookisha"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/codebarreDuree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato_bold"
+        android:gravity="center"
+        android:text="@string/code_barre_Duree"
+        android:textColor="@color/colorReduction"
+        android:textSize="13sp" />
+
+    <ImageView
+        android:id="@+id/imgcodebarre"
+        android:layout_width="match_parent"
+        android:layout_height="179dp"
+        android:padding="15dp"
+        app:srcCompat="@drawable/imgcodebarre" />
+
+    <Button
+        android:id="@+id/btnLibererCoupon"
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/vertShookisha"
+        android:fontFamily="@font/lato_bold"
+        android:text="@string/btn_libere_coupon"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
+</LinearLayout>

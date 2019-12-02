@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.shookisha">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".PanierActivity" />
+        <activity
+            android:name=".PagesActivity"
+            android:label="@string/title_activity_pages"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/app_name"
+            android:theme="@style/CustomActivityThemeNoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".OffreDetailActivity"
+            android:label="OFFRES EN DETAIL"
+            android:theme="@style/AppTheme.NoActionBar"/> <!-- android:parentActivityName="OffresActivity" -->
+        <activity
+            android:name=".PerimetreActivity"
+            android:label="@string/title_perimetre"
+            android:theme="@style/AppTheme.NoActionBar"/> <!-- android:parentActivityName=".Preference" -->
+        <activity
+            android:name=".Preference"
+            android:label="@string/title_preference"
+            android:theme="@style/AppTheme.NoActionBar"/> <!-- android:parentActivityName=".ProfilActivity" -->
+        <activity
+            android:name=".ProfilActivity"
+            android:label="MON PROFIL" />
+    </application>
+
+</manifest>
+
+<!--<activity
+            android:name=".OffresActivity"
+            android:label="OFFRES" />-->

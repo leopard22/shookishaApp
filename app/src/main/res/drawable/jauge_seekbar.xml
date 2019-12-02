@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:topRightRadius="50dp" android:bottomRightRadius="50dp"  android:topLeftRadius="50dp" android:bottomLeftRadius="50dp"/>
+            <padding android:left="10dp" android:right="10dp" android:bottom="10dp" android:top="10dp" />
+            <size android:width="50dp" android:height="210dp" />
+            <solid android:color="@color/colorBlack" />
+        </shape>
+    </item>
+
+    <item android:width="40dp" android:left="160dp">
+        <shape android:shape="rectangle">
+            <corners android:topRightRadius="50dp" android:bottomRightRadius="50dp"/>
+            <gradient android:startColor="@color/colorJauge1" android:endColor="@color/colorJauge1" android:angle="0" android:type="linear"/>
+            <size android:width="60dp" android:height="80dp" />
+       </shape>
+    </item>
+    <item android:width="40dp" android:left="120dp">
+        <shape android:shape="rectangle">
+            <gradient android:startColor="@color/colorJauge2" android:endColor="@color/colorJauge2" android:angle="0" android:type="linear"/>
+            <size android:width="60dp" android:height="80dp" />
+        </shape>
+    </item>
+    <item android:width="40dp" android:left="80dp">
+        <shape android:shape="rectangle">
+            <gradient android:startColor="@color/colorJauge3" android:endColor="@color/colorJauge3" android:angle="0" android:type="linear"/>
+            <size android:width="60dp" android:height="80dp" />
+        </shape>
+    </item>
+    <item android:width="40dp" android:left="40dp">
+        <shape android:shape="rectangle">
+            <gradient android:startColor="@color/colorJauge4" android:endColor="@color/colorJauge4" android:angle="0" android:type="linear"/>
+            <size android:width="60dp" android:height="80dp" />
+        </shape>
+    </item>
+    <item android:width="40dp">
+        <shape android:shape="rectangle">
+            <corners android:topLeftRadius="50dp" android:bottomLeftRadius="50dp"/>
+            <gradient android:startColor="@color/colorJauge5" android:endColor="@color/colorJauge5" android:angle="0" android:type="linear"/>
+            <size android:width="60dp" android:height="80dp" />
+        </shape>
+    </item>
+
+</layer-list>

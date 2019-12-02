@@ -1,0 +1,46 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:windowBackground">@color/windowBackground</item>
+        <item name="android:navigationBarColor">@color/navigationBarColor</item>
+        <item name="android:icon" >@drawable/logo</item><!---->
+        <!--   <item name="android:icon">@drawable/image_vide</item>-->
+        <item name="android:titleTextColor">@color/colorBlack</item>
+
+
+    </style>
+    <!-- no action bar -->
+    <style name="CustomActivityThemeNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <!-- radio button shookisha  -->
+    <style name="shookishaRadioButton" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:colorControlNormal">#999999</item>
+        <item name="android:colorControlActivated">@color/vertShookisha</item>
+        <item name="android:colorControlHighlight">#c51162</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat</item>
+    </style>
+
+    <!-- action bar reste application -->
+    <style name="ThemeActionBar" parent="Theme.AppCompat.Light">
+
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

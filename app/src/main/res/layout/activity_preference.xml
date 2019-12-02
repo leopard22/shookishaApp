@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Preference">
+
+    <TextView
+        android:id="@+id/labelListCat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:text="@string/label_list_cat"
+        android:textColor="#333333"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <ListView
+        android:id="@+id/listPreferences"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:foregroundGravity="left">
+
+    </ListView>
+
+    <Button
+        android:id="@+id/btnSavePreference"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="@color/vertShookisha"
+        android:fontFamily="@font/lato_bold"
+        android:text="@string/savepreference"
+        android:textColor="#FDFFFFFF"
+        android:textSize="16sp" />
+
+</LinearLayout>-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Preference">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbarPreference"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/btnBackPref"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:background="#00FFFFFF"
+                android:scaleType="center"
+                app:srcCompat="@drawable/arrow_back" />
+
+            <TextView
+                android:id="@+id/titlePerimetre"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_toStartOf="@id/btnGoPerimetre"
+                android:layout_toEndOf="@id/btnBackPref"
+                android:fontFamily="@font/lato_bold"
+                android:gravity="center"
+                android:text="@string/title_preference"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <ImageButton
+                android:id="@+id/btnGoPerimetre"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:background="#00FFFFFF"
+                android:scaleType="center"
+                app:srcCompat="@drawable/menu_preferences" />
+        </RelativeLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/labelListCat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:text="@string/label_list_cat"
+            android:textColor="#333333"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ListView
+            android:id="@+id/listPreferences"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:foregroundGravity="left">
+
+        </ListView>
+
+        <Button
+            android:id="@+id/btnSavePreference"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:background="@color/vertShookisha"
+            android:fontFamily="@font/lato_bold"
+            android:text="@string/savepreference"
+            android:textColor="#FDFFFFFF"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</LinearLayout>

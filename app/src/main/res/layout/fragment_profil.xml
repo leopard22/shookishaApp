@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:id="@+id/mainFragmentProfil"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/p_infosUserDiv"
+                android:layout_width="match_parent"
+                android:layout_height="144dp"
+                android:background="@drawable/profil_background"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp"
+                android:paddingTop="10dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="10dp"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/p_nomPrenomText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/lato_bold"
+                    android:gravity="center"
+                    android:text="nom prenom text"
+                    android:textColor="#FD0E0D0D" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/p_nomDateSexeDiv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="5dp"
+                android:visibility="visible"
+                app:layout_constraintTop_toBottomOf="@+id/infosUserDiv">
+
+                <TextView
+                    android:id="@+id/p_titreText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/vertShookisha"
+                    android:gravity="center"
+                    android:text="@string/mon_compte"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF" />
+
+                <EditText
+                    android:id="@+id/p_nomEditText"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:ems="10"
+                    android:hint="@string/nom"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/p_prenomEditText"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:ems="10"
+                    android:hint="@string/prenom"
+                    android:inputType="textPersonName" />
+
+                <LinearLayout
+                    android:id="@+id/p_dateRow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/p_labelDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/label_date"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/p_bornat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:text="born at" />
+
+                  <!--  <EditText
+                        android:id="@+id/p_jourEditText"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/format_jour"
+                        android:inputType="date"
+                        android:maxLength="2" />
+
+                    <EditText
+                        android:id="@+id/p_moisEditText"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/format_mois"
+                        android:inputType="date"
+                        android:maxLength="2" />
+
+                    <EditText
+                        android:id="@+id/p_anneeditText"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/format_annee"
+                        android:inputType="date"
+                        android:maxLength="4" />-->
+                </LinearLayout>
+
+                <Spinner
+                    android:id="@+id/p_genreSpinner"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/p_emailMdpDiv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/p_nomDateSexeDiv">
+
+                <View
+                    android:id="@+id/p_divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/vertShookisha" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/p_imageView"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_weight="1"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/profil_profil" />
+
+                    <EditText
+                        android:id="@+id/p_emailEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="40dp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:fontFamily="@font/lato_regular"
+                        android:hint="@string/prompt_email"
+                        android:inputType="textEmailAddress" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/p_imageView2"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_weight="1"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/profil_cadenas" />
+
+                    <EditText
+                        android:id="@+id/p_mdpEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="40dp"
+                        android:layout_weight="1"
+                        android:contentDescription="Mot de passe"
+                        android:ems="10"
+                        android:fontFamily="@font/lato_regular"
+                        android:hint="Mot de passe"
+                        android:inputType="textPassword" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/p_mdpEditText2"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="41dp"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="@string/mdp2"
+                    android:inputType="textPassword"
+                    tools:visibility="invisible" />
+
+                <Button
+                    android:id="@+id/p_validerProfil"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="41dp"
+                    android:layout_weight="1"
+                    android:background="@color/vertShookisha"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="@string/btn_profil"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="28dp"
+        android:scaleType="center"
+        app:backgroundTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:maxImageSize="55dp"
+        app:srcCompat="@drawable/logout" />
+
+
+</android.support.constraint.ConstraintLayout>

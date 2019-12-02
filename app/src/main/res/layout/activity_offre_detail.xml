@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".OffreDetailActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbarPreference"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/btnBackOffreDetail"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:background="#00FFFFFF"
+                android:scaleType="center"
+                app:srcCompat="@drawable/arrow_back" />
+
+            <TextView
+                android:id="@+id/titleoffredetail"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_toStartOf="@+id/btnGoPreference"
+                android:layout_toEndOf="@id/btnBackOffreDetail"
+                android:fontFamily="@font/lato_bold"
+                android:gravity="center"
+                android:text="@string/title_offre_detail"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <ImageButton
+                android:id="@+id/btnGoPreference"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:background="#00FFFFFF"
+                android:scaleType="center" />
+        </RelativeLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/positionPin"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                app:srcCompat="@drawable/offredetailposition_pin" />
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/sliderViewpager"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_toLeftOf="@id/btnZoom"
+                android:layout_toRightOf="@id/positionPin"/>
+
+           <!-- <ImageView
+                android:id="@+id/imgOffreDetail"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_toLeftOf="@id/btnZoom"
+                android:layout_toRightOf="@id/positionPin"
+                tools:srcCompat="@tools:sample/backgrounds/scenic" />-->
+
+            <ImageButton
+                android:id="@+id/btnZoom"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                app:srcCompat="@drawable/offredetailzoom" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/labelOfferDetailTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_bold"
+            android:text="labelOfferDetailTitle"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginRight="5dp"
+                app:srcCompat="@drawable/offretag" />
+
+            <TextView
+                android:id="@+id/labelDetailShopLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/lato_regular"
+                android:text="TextView" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageview6"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginRight="5dp"
+                app:srcCompat="@drawable/offredetailposition" />
+
+            <TextView
+                android:id="@+id/labelDetailShopAdress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/lato_regular"
+                android:text="( adresse )" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/labelOffreDetailReduction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/lato_black"
+                android:text="TextView"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/labelOfferDetailPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/lato_black"
+                android:text="TextView"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/labelOfferDetailNetPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_bold"
+                android:text="TextView"
+                android:textColor="@color/colorReduction"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnGenererCodeBare"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/vertShookisha"
+            android:fontFamily="@font/lato_bold"
+            android:text="@string/btn_generer_code"
+            android:textColor="#ffffff"
+            android:textSize="22sp"
+            tools:text="@string/btn_generer_code" />
+
+        <TextView
+            android:id="@+id/dureeoffre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textColor="#333333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/dureecoupon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textColor="@color/danger"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/offerDescription"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/lato_regular"
+            android:gravity="top"
+            android:paddingTop="5dp"
+            android:text="TextView"
+            android:textColor="#333333"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+</LinearLayout>

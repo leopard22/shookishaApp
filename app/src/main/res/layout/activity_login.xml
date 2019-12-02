@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".LoginActivity">
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/connexionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="376dp"
+            android:layout_marginEnd="24dp"
+
+            android:background="#FFFFFF"
+            android:fontFamily="@font/lato_regular"
+            android:hint="@string/prompt_email"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="10dp"
+            android:selectAllOnFocus="true" />
+
+        <View
+            android:id="@+id/connexionDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@color/colorPrimary" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="#FFFFFF"
+            android:hint="@string/prompt_password"
+            android:imeActionLabel="@string/action_sign_in_short"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:paddingLeft="10dp"
+            android:selectAllOnFocus="true" />
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/boutonarrondi"
+            android:fontFamily="@font/lato_regular"
+            android:text="@string/connexion"
+            android:textColor="#FFFFFF"
+            tools:text="@string/connexion" />
+
+        <Button
+            android:id="@+id/forgetMdp"
+            android:layout_width="400dp"
+            android:layout_height="40dp"
+            android:background="#00FFFFFF"
+            android:fontFamily="@font/lato_regular"
+            android:text="@string/btnforgetMdp"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/newCompte"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/newCompte"
+            android:fontFamily="@font/lato_regular"
+            android:gravity="center"
+            android:text="@string/new_compte"
+            android:textColor="#FFFFFF"
+            tools:text="@string/new_compte" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/forgetMdpLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="15dp"
+        android:visibility="gone"
+        tools:layout_editor_absoluteY="16dp">
+
+        <EditText
+            android:id="@+id/emailForgetEditText"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="5dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:hint="E-mail"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="10dp" />
+
+        <Button
+            android:id="@+id/btnForgetSend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/boutonarrondi"
+            android:text="@string/btnForgetSend"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnForgetCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/danger"
+            android:text="@string/btnForgetCancel"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
