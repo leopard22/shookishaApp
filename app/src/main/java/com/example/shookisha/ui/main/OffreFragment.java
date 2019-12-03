@@ -54,6 +54,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class OffreFragment extends Fragment implements AdapterView.OnItemSelectedListener,
@@ -75,6 +76,7 @@ public class OffreFragment extends Fragment implements AdapterView.OnItemSelecte
     private UserDataSource shookisher;
     private List<Categorie> categorieList;
     private Location longitudeLatitude;
+    private HashMap<String,Integer> filterCatList;
 
     //attribut pour permissions
     private ArrayList<String> permissionsToRequest;
@@ -97,6 +99,7 @@ public class OffreFragment extends Fragment implements AdapterView.OnItemSelecte
     private boolean selectedTout = false;
     private boolean firstTimeConnected = true;
     private boolean itemSpinnerSelected = true;
+    private boolean spinnerTouched = false;
 
     /**
      *
@@ -118,6 +121,12 @@ public class OffreFragment extends Fragment implements AdapterView.OnItemSelecte
         System.out.println("OffreFragment :: onCreate()");
 
         String userReceive=null;
+
+        filterCatList = new HashMap<>();
+
+        filterCatList.put("cat",0);
+        filterCatList.put("priceup",0);
+        filterCatList.put("pricedown",0);
 
         //permission requis
         permissions.add(Manifest.permission.ACCESS_FINE_LOCATION);
@@ -184,7 +193,9 @@ public class OffreFragment extends Fragment implements AdapterView.OnItemSelecte
             @Override
             public void onClick(View v) {
                 Log.i("Log_sortByPriceUp", "onclick called from sortByPriceUp");
-                new OffersTask().execute(String.valueOf( longitudeLatitude.getLatitude()),String.valueOf(longitudeLatitude.getLongitude()),String.valueOf(1));
+                filterCatList.put("priceup",1);
+                filterCatList.put("pricedown",0);
+                new OffersTask().execute( longitudeLatitude.getLatitude(),longitudeLatitude.getLongitude());
             }
         });
 
@@ -192,7 +203,9 @@ public class OffreFragment extends Fragment implements AdapterView.OnItemSelecte
             @Override
             public void onClick(View v) {
                 Log.i("Log_sortByPriceDown", "onclick called from sortByPriceDown");
-                new OffersTask().execute(String.valueOf( longitudeLatitude.getLatitude()),String.valueOf(longitudeLatitude.getLongitude()),String.valueOf(2));
+                filterCatList.put("pricedown",1);
+                filterCatList.put("priceup",0);
+                new OffersTask().execute( longitudeLatitude.getLatitude(),longitudeLatitude.getLongitude());
             }
         });
 
@@ -205,14 +218,8 @@ public class OffreFragment extends Fragment implements AdapterView.OnItemSelecte
             }
         });
 
-
         offreRecyclerView = view.findViewById(R.id.recyclerView);
         offreRecyclerView.setHasFixedSize(true);
-
-       /* categorieSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
-        });*/
-
 
     }
 
@@ -224,18 +231,9 @@ public class OffreFragment extends Fragment implements AdapterView.OnItemSelecte
         if(itemSpinnerSelected) {
             itemSpinnerSelected = false;
         }else {
-            new OffersTask().execute(String.valueOf( longitudeLatitude.getLatitude()),String.valueOf(longitudeLatitude.getLongitude()),String.valueOf(0), String.valueOf(rf.getCatId()));
-
+            filterCatList.put("cat",rf.getCatId());
+            new OffersTask().execute( longitudeLatitude.getLatitude(),longitudeLatitude.getLongitude());
         }
-
-/*        if (rf.getCatId() == 0 && selectedTout == false){
-
-        }else{
-
-            new OffersTask().execute(String.valueOf( longitudeLatitude.getLatitude()),String.valueOf(longitudeLatitude.getLongitude()),String.valueOf(0), String.valueOf(rf.getCatId()));
-        }*/
-
-
     }
 
     @Override
@@ -265,7 +263,7 @@ public class OffreFragment extends Fragment implements AdapterView.OnItemSelecte
     /**
      *
      */
-    private class OffersTask extends AsyncTask<String,Void,String> {
+    private class OffersTask extends AsyncTask<Double,Void,String> {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -277,25 +275,33 @@ public class OffreFragment extends Fragment implements AdapterView.OnItemSelecte
         }
 
         @Override
-        protected String doInBackground(String... strings) {
+        protected String doInBackground(Double... strings) {
 
             Api api = new Api();
             String resultApi="";
             int sort = 0;
-            double coordX = Double.parseDouble(strings[0]) ;
-            double coordY = Double.parseDouble(strings[1]);
+            double coordX = strings[0] ;
+            double coordY =strings[1];
             ArrayList filterCat = new ArrayList();
             String jsonStr ;
 
-            if(strings.length > 2){
-               sort = Integer.parseInt( strings[2]);
+
+            if(filterCatList.get("pricedown") == 1){
+               sort = 1;
             }
 
-            if(strings.length > 3){
-                filterCat.add( strings[3]) ;
+
+            if(filterCatList.get("priceup") == 1){
+                sort = 2;
+            }
+
+            filterCat.add(0, filterCatList.get("cat")) ;
+
+           /* if(strings.length > 3){
+
             }else{
                 filterCat = myCategories();
-            }
+            }*/
 
 
             System.out.println("OffresActivity Doinbackground :: coordX = "+coordX+" coordy = "+coordY);
@@ -493,7 +499,7 @@ public class OffreFragment extends Fragment implements AdapterView.OnItemSelecte
       //  updateOperation();
         if(longitudeLatitude != null){
             refresh = true;
-            new OffersTask().execute(String.valueOf( longitudeLatitude.getLatitude()) ,String.valueOf(longitudeLatitude.getLongitude()));
+            new OffersTask().execute( longitudeLatitude.getLatitude() ,longitudeLatitude.getLongitude());
         }
         System.out.println("OffreFragment :: onResume()");
     }
@@ -527,13 +533,13 @@ public class OffreFragment extends Fragment implements AdapterView.OnItemSelecte
         if((location != null) && (firstRun == true)){
             System.out.println("OffreFragment:: (location != null) && (firstRun == true) ");
             firstRun = false;
-            new OffersTask().execute(String.valueOf( location.getLatitude()) , String.valueOf( location.getLongitude()));
+            new OffersTask().execute( location.getLatitude() ,  location.getLongitude());
             System.out.println("OffreFragment:: onLocationChanged:  longitude :"+ longitudeLatitude.getLongitude()+" latitude :"+longitudeLatitude.getLatitude());
         }
         if(location != null && refresh != false){
 
             System.out.println("OffreFragment:: location != null ");
-            new OffersTask().execute(String.valueOf( location.getLatitude()) , String.valueOf( location.getLongitude()));
+            new OffersTask().execute(location.getLatitude() , location.getLongitude());
             System.out.println("OffreFragment:: onLocationChanged:  longitude :"+ longitudeLatitude.getLongitude()+" latitude :"+longitudeLatitude.getLatitude());
         }
         //if(location)
@@ -584,7 +590,7 @@ public class OffreFragment extends Fragment implements AdapterView.OnItemSelecte
 
     private void updateOperation(){
         refresh = true;
-        new OffersTask().execute(String.valueOf( longitudeLatitude.getLatitude()) ,String.valueOf(longitudeLatitude.getLongitude()));
+        new OffersTask().execute(longitudeLatitude.getLatitude() ,longitudeLatitude.getLongitude());
         swiperefresh.setRefreshing(false);
     }
 
