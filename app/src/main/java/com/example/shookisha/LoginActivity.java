@@ -18,10 +18,12 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.shookisha.shared.Api;
@@ -56,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
         sharedPref = context.getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 
         usernameEditText = findViewById(R.id.username);
-        passwordEditText = findViewById(R.id.password);
+        passwordEditText = (EditText) findViewById(R.id.password);
         loginButton = findViewById(R.id.login);
         forgetMdpButton = findViewById(R.id.forgetMdp);
         newCompteButton = findViewById(R.id.newCompte);
@@ -112,10 +114,24 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        passwordEditText.setImeActionLabel( getString(R.string.prompt_bouton_text_send) ,EditorInfo.IME_ACTION_SEND);
+
+        passwordEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                boolean handled = false;
+                if(actionId == EditorInfo.IME_ACTION_SEND){
+                    handled = true;
+                    envoyer();
+                }
+                return handled;
+            }
+        });
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                envoyer(v);
+                envoyer();
             }
         });
 
@@ -195,10 +211,10 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private void envoyer(View view){
+    private void envoyer(){
         if (!isConnected()) {
 
-            Snackbar.make(view, getString(R.string.message_no_connexion), Snackbar.LENGTH_LONG)
+            Snackbar.make(findViewById(R.id.connexionLayout), getString(R.string.message_no_connexion), Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
             return;
         }
@@ -208,7 +224,7 @@ public class LoginActivity extends AppCompatActivity {
             new ConnexionTask().execute(usernameEditText.getText().toString(),passwordEditText.getText().toString() );
         }else{
           //  Toast.makeText(getApplicationContext(), "mot de passe ou username incorrect ", Toast.LENGTH_LONG).show();
-            Snackbar.make(view, getString(R.string.login_password_empty), Snackbar.LENGTH_LONG)
+            Snackbar.make(findViewById(R.id.connexionLayout), getString(R.string.login_password_empty), Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
         }
     }

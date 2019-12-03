@@ -64,10 +64,10 @@
             android:background="#FFFFFF"
             android:hint="@string/prompt_password"
             android:imeActionLabel="@string/action_sign_in_short"
-            android:imeOptions="actionDone"
             android:inputType="textPassword"
             android:paddingLeft="10dp"
-            android:selectAllOnFocus="true" />
+            android:selectAllOnFocus="true"
+            android:imeOptions="actionSend"/>
 
         <Button
             android:id="@+id/login"

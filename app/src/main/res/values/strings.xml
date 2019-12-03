@@ -21,6 +21,7 @@
     <string name="message_no_connexion">No internet connection.</string>
     <string name="message_mdp_send">New password sent</string>
     <string name="message_email_incorrect">Invalid email</string>
+    <string name="prompt_bouton_text_send">Send</string>
     <!-- jauge page -->
     <string name="distance_kilometre">%1$d \n Kms</string>
     <string name="label_text_perimetre_offre">Commercial proposal within a radius of x kms</string>
