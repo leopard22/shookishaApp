@@ -94,13 +94,13 @@ public class OffreRVAdapter extends RecyclerView.Adapter<OffreRVAdapter.MyViewHo
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
          public TextView labelOfferReduction, labelOfferTitle, labelShopLabel, labelOfferPrice, labelOfferNetPrice, labelShopAdress;
-         public ImageView imageOffer,imgPastille,imgTag,imgview;
+         public ImageView imageOffer,imgPastille,imgTag,imgAdress;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             imgPastille =  itemView.findViewById(R.id.imgPastille);
             imgTag = itemView.findViewById(R.id.imgTag);
-            imgview = itemView.findViewById(R.id.imgview);
+            imgAdress = itemView.findViewById(R.id.imgAdress);
             labelShopAdress = itemView.findViewById(R.id.labelShopAdress);
             imageOffer = itemView.findViewById(R.id.imageOffer);
             labelOfferReduction = itemView.findViewById(R.id.labelOfferReduction);
