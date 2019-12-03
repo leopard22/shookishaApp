@@ -94,6 +94,9 @@ public class OffreFragment extends Fragment implements AdapterView.OnItemSelecte
     private SwipeRefreshLayout swiperefresh;
     private ImageButton sortByPriceUp;
     private ImageButton sortByPriceDown;
+    private boolean selectedTout = false;
+    private boolean firstTimeConnected = true;
+    private boolean itemSpinnerSelected = true;
 
     /**
      *
@@ -174,6 +177,7 @@ public class OffreFragment extends Fragment implements AdapterView.OnItemSelecte
         sortByPriceUp = view.findViewById(R.id.sortByPriceUp);
         Log.i("Log_onViewCreated", "onViewCreated called from Offrefragment");
 
+        categorieSpinner.setSelection(categorieSpinner.getSelectedItemPosition(),false);
         categorieSpinner.setOnItemSelectedListener(this);
 
         sortByPriceUp.setOnClickListener(new View.OnClickListener() {
@@ -217,7 +221,21 @@ public class OffreFragment extends Fragment implements AdapterView.OnItemSelecte
         System.out.println("select categorie :: Offre :"+adapterView.getItemAtPosition(position).toString());
         ResultFilter rf = (ResultFilter) adapterView.getItemAtPosition(position) ;
 
-        //  new OffersTask().execute(String.valueOf( longitudeLatitude.getLatitude()),String.valueOf(longitudeLatitude.getLongitude()),String.valueOf(0), String.valueOf(rf.getCatId()));
+        if(itemSpinnerSelected) {
+            itemSpinnerSelected = false;
+        }else {
+            new OffersTask().execute(String.valueOf( longitudeLatitude.getLatitude()),String.valueOf(longitudeLatitude.getLongitude()),String.valueOf(0), String.valueOf(rf.getCatId()));
+
+        }
+
+/*        if (rf.getCatId() == 0 && selectedTout == false){
+
+        }else{
+
+            new OffersTask().execute(String.valueOf( longitudeLatitude.getLatitude()),String.valueOf(longitudeLatitude.getLongitude()),String.valueOf(0), String.valueOf(rf.getCatId()));
+        }*/
+
+
     }
 
     @Override
@@ -330,7 +348,11 @@ public class OffreFragment extends Fragment implements AdapterView.OnItemSelecte
                     JSONArray offreData = obj.getJSONArray("content");
                     JSONArray filterData = obj.getJSONArray("resultFilter");
                     setDataOffer(offreData);
-                    setDataResultFilter(filterData);
+                    if(firstTimeConnected){
+                        setDataResultFilter(filterData);
+                        firstTimeConnected = false;
+                    }
+
                 }
             }
             catch (JSONException e) {
@@ -592,6 +614,7 @@ public class OffreFragment extends Fragment implements AdapterView.OnItemSelecte
     private void setFilterSpinner(){
         categorieAdapter = new CategorieAdapter(context,resultFilters);
         categorieSpinner.setAdapter(categorieAdapter);
+        //categorieSpinner.setSelection(0);
 
     }
 
