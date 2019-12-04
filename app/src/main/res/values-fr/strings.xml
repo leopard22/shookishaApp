@@ -10,7 +10,7 @@
     <string name="btnforgetMdp">MOT DE PASSE OUBLIÉ ?</string>
     <string name="btn_profil">valider</string>
     <string name="btn_libere_coupon">libérez ce coupon</string>
-    <string name="btn_generer_code">générer le code barre</string>
+    <string name="btn_generer_code">générer coupon</string>
     <string name="btnForgetSend">Envoyer</string>
     <string name="action_sign_in">CONNECTEZ-VOUS</string>
     <string name="action_sign_in_short">se connecter</string>
@@ -62,4 +62,7 @@
     <string name="duree_coupon">Une fois généré, ce coupon à une durée %1$d</string>
     <string name="duree_offre">Offre valable du %1$s au  %2$s</string>
     <string name="prompt_bouton_text_send">Envoyer</string>
+    <string name="date_achat">Date achat : %1$s</string>
+    <string name="numero_codebarre_achat">Numéro code barre : %1$s</string>
+    <string name="date_panier">Date : %1$s</string>
 </resources>

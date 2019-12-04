@@ -41,10 +41,10 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                 break;
 
             case 1:
-                fragment = PanierFragment.newPanierFragment(data);
+                fragment = PanierFragment.newInstance(data);
                 break;
             case 2:
-                fragment = new AchatFragment();
+                fragment = AchatFragment.newInstance(data);
                 break;
             case 3:
                 fragment = ProfilFragment.newInstance(data);

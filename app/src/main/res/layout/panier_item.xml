@@ -1,49 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginBottom="8dp"
-    android:layout_marginTop="8dp">
+    android:layout_height="wrap_content"
+    android:layout_marginStart="5dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="5dp"
+    android:layout_marginBottom="8dp">
 
 
-    <ImageView
-        android:id="@+id/offerImageLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars"></ImageView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/operationSelectionDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="operationSelectionDate"
-        android:layout_marginBottom="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></TextView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="182dp"
+            android:background="@drawable/dotted_border">
 
-    <ImageView
-        android:id="@+id/couponImageSku"
-        android:layout_width="259dp"
-        android:layout_height="102dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintStart_toEndOf="@+id/offerImageLabel"
-        app:layout_constraintTop_toBottomOf="@+id/operationSelectionDate"
-        tools:srcCompat="@drawable/imgcodebarre"></ImageView>
+            <ImageView
+                android:id="@+id/offerImageLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="16dp"
+                android:padding="5dp"
+                tools:srcCompat="@tools:sample/avatars"></ImageView>
 
-    <TextView
-        android:id="@+id/couponSku"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="112dp"
-        android:text="couponSku"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/couponImageSku"></TextView>
+            <TextView
+                android:id="@+id/operationSelectionDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/offerImageLabel"
+                android:text="operationSelectionDate"
+                android:textColor="@color/colorText"></TextView>
+
+            <ImageView
+                android:id="@+id/couponImageSku"
+                android:layout_width="259dp"
+                android:layout_height="102dp"
+                android:layout_below="@id/operationSelectionDate"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="8dp"
+                tools:srcCompat="@drawable/imgcodebarre"></ImageView>
+
+            <TextView
+                android:id="@+id/couponSku"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/couponImageSku"
+                android:layout_alignStart="@id/couponImageSku"
+                android:layout_marginTop="10dp"
+                android:paddingStart="10dp"
+                android:text="couponSku"
+                android:textColor="@color/colorText"></TextView>
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/divider_item_panier"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/vertShookisha" />
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

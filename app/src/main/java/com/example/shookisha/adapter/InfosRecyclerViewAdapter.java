@@ -15,7 +15,6 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-
 public class InfosRecyclerViewAdapter extends RecyclerView.Adapter<InfosRecyclerViewAdapter.MyViewHolder> {
 
     private ArrayList<Infos> infosList;

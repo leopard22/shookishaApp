@@ -1,5 +1,6 @@
 package com.example.shookisha.ui.main;
 
+import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -35,8 +36,9 @@ public class PanierFragment extends Fragment {
     private RecyclerView panierRecyclerView;
     private ArrayList<Bascket> basckets;
     private PanierRecyclerViewAdapter panierRecyclerViewAdapter;
+    private Activity context;
 
-    public static PanierFragment newPanierFragment(String user){
+    public static PanierFragment newInstance(String user){
 
         PanierFragment fragment = new PanierFragment();
         Bundle bundle = new Bundle();
@@ -49,7 +51,7 @@ public class PanierFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        String userReceive;
+        String userReceive="";
         System.out.println("PanierFragment :: onCreate()");
 
         if (getArguments() != null) {
@@ -65,7 +67,7 @@ public class PanierFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // context = getActivity();
+        context = getActivity();
         View root = inflater.inflate(R.layout.fragment_panier, container, false);
 
         return root;
@@ -84,7 +86,7 @@ public class PanierFragment extends Fragment {
     public void onStart() {
         super.onStart();
         System.out.println("PanierFragment :: onStart()");
-      //  new PanierTask().execute();
+        new PanierTask().execute();
     }
 
     @Override
@@ -96,6 +98,7 @@ public class PanierFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        Log.i("Log_infostask", "panier called from panierfragment");
         System.out.println("PanierFragment :: onResume()");
         new PanierTask().execute();
     }
@@ -117,6 +120,9 @@ public class PanierFragment extends Fragment {
 
         @Override
         protected String doInBackground(String... strings) {
+            Log.i("Log_infostask", "panier called from panierfragment");
+            System.out.println("requete lancé");
+
             api = new Api();
 
             String resultApi="";
@@ -163,8 +169,8 @@ public class PanierFragment extends Fragment {
     }
 
     public void setupRecycler(ArrayList<Bascket> bascketsList){
-        panierRecyclerViewAdapter = new PanierRecyclerViewAdapter(new ArrayList<>(bascketsList) , getContext());
-        panierRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        panierRecyclerViewAdapter = new PanierRecyclerViewAdapter(new ArrayList<>(bascketsList) , context.getApplicationContext());
+        panierRecyclerView.setLayoutManager(new LinearLayoutManager(context));
         panierRecyclerView.setAdapter(panierRecyclerViewAdapter);
     }
 

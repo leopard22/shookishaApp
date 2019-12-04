@@ -491,6 +491,7 @@ public class OffreFragment extends Fragment implements AdapterView.OnItemSelecte
         if (mGoogleApiClient.isConnected()) {
             mGoogleApiClient.disconnect();
         }
+        firstTimeConnected = true;
     }
 
     @Override

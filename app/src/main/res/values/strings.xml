@@ -35,7 +35,7 @@
     <!--  Preference page -->
     <string name="label_list_cat">Categories of offers:</string>
     <!-- offre detail -->
-    <string name="btn_generer_code">generate the bar code</string>
+    <string name="btn_generer_code">generate coupon</string>
     <string name="code_barre_Duree">"This coupon expires in %1$d "</string>
     <string name="coupon_expire_text">Coupon expired!</string>
     <string name="title_offre_detail">OFFERS IN DETAIL</string>
@@ -72,4 +72,9 @@
     <string name="label_faq">FAQ</string>
     <string name="label_infos_legales">Legal information</string>
     <string name="label_titre_page_infos">Read more about shookisha</string>
+    <!-- historique achat -->
+    <string name="date_achat">Date purchase : %1$s </string>
+    <string name="numero_codebarre_achat">Bar code number : %1$s </string>
+    <!-- panier -->
+    <string name="date_panier">Date : %1$s </string>
 </resources>
